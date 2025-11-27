@@ -21,7 +21,7 @@ export function DiffInput({ onSubmit, isLoading }: DiffInputProps) {
   return (
     <div className="max-w-4xl mx-auto p-6 mt-20">
       <h1 className="text-3xl font-bold text-center mb-8 text-zinc-100">
-        scroll the diff. understand the change.
+        scroll the diff
       </h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
