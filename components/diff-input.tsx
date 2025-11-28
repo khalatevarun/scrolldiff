@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 interface DiffInputProps {
   onSubmit: (oldCode: string, newCode: string) => void
@@ -20,9 +21,18 @@ export function DiffInput({ onSubmit, isLoading }: DiffInputProps) {
 
   return (
     <div className="max-w-4xl mx-auto p-6 mt-20">
-      <h1 className="text-3xl font-bold text-center mb-8 text-zinc-100">
-        scroll the diff
-      </h1>
+      <div className="flex flex-col items-center justify-center gap-4 mb-8">
+        <Image
+          src="/96.png"
+          alt="Scroll the Diff Logo"
+          width={45}
+          height={45}
+          className="rounded-xl shadow-2xl"
+        />
+        <h1 className="text-3xl font-bold text-zinc-100">
+          scroll the diff
+        </h1>
+      </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
@@ -54,7 +64,7 @@ export function DiffInput({ onSubmit, isLoading }: DiffInputProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-8 py-3 bg-[#1FB8CD]/80 hover:bg-[#1FB8CD]/50 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {isLoading ? (
               <>
