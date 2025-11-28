@@ -86,11 +86,12 @@ export function DiffInput({ onSubmit, isLoading }: DiffInputProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-8 py-3 bg-[#1FB8CD] hover:bg-[#1FB8CD]/80 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-8 py-3 bg-[#1FB8CD]/80 hover:bg-[#1FB8CD]/50 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {isLoading ? (
               <>
-                <span className="animate-spin">⏳</span> preparing the diff…
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                preparing the diff…
               </>
             ) : (
               "start scrolling"
