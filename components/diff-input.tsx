@@ -61,7 +61,7 @@ export function DiffInput({ onSubmit, isLoading }: DiffInputProps) {
                 <span className="animate-spin">⏳</span> preparing the diff…
               </>
             ) : (
-              "start"
+              "start scrolling"
             )}
           </button>
         </div>
