@@ -17,8 +17,8 @@ interface Step {
 
 export function TutorialView({ steps }: { steps: Step[] }) {
   return (
-    <SelectionProvider className="flex gap-12 max-w-6xl mx-auto px-6 py-12">
-      <div className="flex-1 mt-32 mb-[90vh] ml-2 prose prose-invert">
+    <SelectionProvider className="flex gap-0 w-full">
+      <div className="flex-1 mt-32 mb-[90vh] ml-8 pr-4 prose prose-invert max-w-lg">
         <button 
           onClick={() => window.location.reload()}
           className="mb-8 text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors"
@@ -39,19 +39,20 @@ export function TutorialView({ steps }: { steps: Step[] }) {
           </Selectable>
         ))}
       </div>
-      <div className="w-[40vw] max-w-xl">
-        <div className="top-16 sticky rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden">
+      <div className="flex-1 sticky top-0 h-screen bg-zinc-950 border-l border-zinc-800 p-6 overflow-hidden">
+        <div className="rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden h-full flex flex-col">
           <div className="flex items-center gap-2 px-4 py-3 bg-zinc-900/50 border-b border-zinc-800">
             <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
             <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
             <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
           </div>
-          <div className="max-h-[80vh] overflow-auto">
+          <div className="flex-1 overflow-auto">
             <Selection
               from={steps.map((step) => (
                 <Pre
                   code={step.highlightedCode}
-                  className="min-h-[40rem] bg-transparent p-4"
+                  className="bg-transparent p-4 text-sm"
+                  style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}
                   handlers={[tokenTransitions]}
                 />
               ))}
